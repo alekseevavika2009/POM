@@ -30,10 +30,20 @@ public class LabTests {
         LoginPage.enterUserName(userLogin);
         LoginPage.enterPassword(password);
         LoginPage.clickLoginButton();
+
+        LoginPage.waitForPageIsLoaded();
     }
 
     @Test
     public void CreateRoomTest() {
+        LoginPage.waitForPageIsLoaded();
+
+        LoginPage.enterUserName(userLogin);
+        LoginPage.enterPassword(password);
+        LoginPage.clickLoginButton();
+
+        LoginPage.waitForPageIsLoaded();
+
         RoomPage.waitForRoomPageIsLoaded();
 
         RoomPage.enterRoom(room);
@@ -43,6 +53,8 @@ public class LabTests {
         RoomPage.enterRoomDetails(roomDetails);
 
         RoomPage.clickCreateButton();
+
+        RoomPage.waitForRoomPageIsLoaded();
     }
 
 
