@@ -25,37 +25,41 @@ public class LabTests {
 
     @Test
     public void LoginTest() {
-        LoginPage.waitForPageIsLoaded();
+        LoginPage page = new LoginPage();
+        page.waitForPageIsLoaded();
 
-        LoginPage.enterUserName(userLogin);
-        LoginPage.enterPassword(password);
-        LoginPage.clickLoginButton();
+        page.enterUserName(userLogin);
+        page.enterPassword(password);
+        page.clickLoginButton();
 
-        LoginPage.waitForPageIsLoaded();
+        page.waitForPageIsLoaded();
     }
 
     @Test
     public void CreateRoomTest() {
-        LoginPage.waitForPageIsLoaded();
+        LoginPage page = new LoginPage();
+    
+        page.waitForPageIsLoaded();
 
-        LoginPage.enterUserName(userLogin);
-        LoginPage.enterPassword(password);
-        LoginPage.clickLoginButton();
+        page.enterUserName(userLogin);
+        page.enterPassword(password);
+        page.clickLoginButton();
 
-        LoginPage.waitForPageIsLoaded();
+        page.waitForPageIsLoaded();
+        
+        RoomPage roomPage = new RoomPage();
 
-        RoomPage.waitForRoomPageIsLoaded();
+        roomPage.waitForPageIsLoaded();
 
-        RoomPage.enterRoom(room);
-        RoomPage.enterType(type);
-        RoomPage.enterAccessible(accessible);
-        RoomPage.enterPrice(price);
-        RoomPage.enterRoomDetails(roomDetails);
+        roomPage.enterRoom(room);
+        roomPage.enterType(type);
+        roomPage.enterAccessible(accessible);
+        roomPage.enterPrice(price);
+        roomPage.enterRoomDetails(roomDetails);
 
-        RoomPage.clickCreateButton();
+        roomPage.clickCreateButton();
 
-        RoomPage.waitForRoomPageIsLoaded();
+        roomPage.waitForRoomPageIsLoaded();
     }
 
 
-}
