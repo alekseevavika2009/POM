@@ -5,15 +5,15 @@ import com.codeborne.selenide.SelenideElement;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.$x;
+import  static com.codeborne.selenide.Selenide.$x;
 
 public class RoomPage {
     private static final SelenideElement title = $(".navbar-brand");
-    private static final SelenideElement room = $x("//*[@id=\"root-container\"]/div/div/div/div[1]/div[1]/p");
-    private static final SelenideElement type = $x("//*[@id=\"root-container\"]/div/div/div/div[1]/div[2]/p");
-    private static final SelenideElement accessible = $x("//*[@id=\"root-container\"]/div/div/div/div[1]/div[3]/p");
-    private static final SelenideElement price = $x("//*[@id=\"root-container\"]/div/div/div/div[1]/div[4]/p");
-    private static final SelenideElement roomDetails = $x("//*[@id=\"root-container\"]/div/div/div/div[1]/div[5]/p");
+    private static final SelenideElement room = $(".Room #");
+    private static final SelenideElement type = $("#root-container > div > div > div > div.row > div:nth-child(2) > p");
+    private static final SelenideElement accessible = $("#root-container > div > div > div > div.row > div:nth-child(3) > p");
+    private static final SelenideElement price = $("#root-container > div > div > div > div.row > div:nth-child(4) > p");
+    private static final SelenideElement roomDetails = $("#root-container > div > div > div > div.row > div:nth-child(5) > p");
 
     private static final SelenideElement createButton = $("#createRoom");
 
