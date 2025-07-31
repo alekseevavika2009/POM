@@ -8,61 +8,66 @@ import static com.codeborne.selenide.Selenide.$;
 import  static com.codeborne.selenide.Selenide.$x;
 
 public class RoomPage {
-    private static final SelenideElement title = $(".navbar-brand");
-    private static final SelenideElement room = $(".Room #");
-    private static final SelenideElement type = $("#root-container > div > div > div > div.row > div:nth-child(2) > p");
-    private static final SelenideElement accessible = $("#root-container > div > div > div > div.row > div:nth-child(3) > p");
-    private static final SelenideElement price = $("#root-container > div > div > div > div.row > div:nth-child(4) > p");
-    private static final SelenideElement roomDetails = $("#root-container > div > div > div > div.row > div:nth-child(5) > p");
+    private  final SelenideElement title = $(".navbar-brand");
+    private  final SelenideElement room = $("[data-testid = 'room-number']");
+    private  final SelenideElement type =  $("[data-testid = 'type']");
+    private final SelenideElement accessible =  $("[data-testid = 'accessible']");
+    private final SelenideElement price = $("[data-testid = 'price']");
+    private final SelenideElement roomDetails = $("[data-testid = 'room-details']");
 
-    private static final SelenideElement createButton = $("#createRoom");
+    private final SelenideElement createButton = $("#createRoom");
 
 
-    public static void waitForRoomPageIsLoaded() {
-        title.shouldBe(visible).shouldHave(text("Restful Booker Platform Demo"));
+    public void waitForPageIsLoaded() {
+        title.shouldBe(visible);
     }
 
-    public static void checkRoom() {
+
+    public void checkRoom() {
         room.shouldBe(visible).shouldHave(text("Room"));
     }
 
-    public static void checkType() {
+    public void checkType() {
         type.shouldBe(visible).shouldHave(text("Type"));
     }
 
-    public static void checkAccessible() {
+    public void checkAccessible() {
         accessible.shouldBe(visible).shouldHave(text("Accessible"));
     }
 
-    public static void checkPrice() {
+    public void checkPrice() {
         price.shouldBe(visible).shouldHave(text("Price"));
     }
 
-    public static void checkRoomDetails() {
+    public void checkRoomDetails() {
         roomDetails.shouldBe(visible).shouldHave(text("Room details"));
     }
 
-    public static void enterRoom(String value) {
+    public void enterRoom(String value) {
         room.setValue(value);
     }
 
-    public static void enterType(String value) {
+    public void enterType(String value) {
         type.setValue(value);
     }
 
-    public static void enterAccessible(String value) {
+    public void enterAccessible(String value) {
         accessible.setValue(value);
     }
 
-    public static void enterPrice(String value) {
+    public  void enterPrice(String value) {
         price.setValue(value);
     }
 
-    public static void enterRoomDetails(String value) {
+    public void enterRoomDetails(String value) {
         roomDetails.setValue(value);
     }
 
-    public static void clickCreateButton() {
+    public void clickCreateButton() {
+        createButton.click();
+    }
+    public void createRoom(String number) {
+        room.setValue(number);
         createButton.click();
     }
 
